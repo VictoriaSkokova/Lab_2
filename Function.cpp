@@ -45,7 +45,7 @@ void LinkedList::push_back(int newElem)
 }
 
 
-void LinkedList::push_front(int newElem)//добавление в начало
+void LinkedList::push_front(int newElem)
 {
 	if (size == 0) {
 		add_first(newElem);
@@ -57,7 +57,7 @@ void LinkedList::push_front(int newElem)//добавление в начало
 
 }
 
-void LinkedList::pop_back()//удаление последнего
+void LinkedList::pop_back()
 {
 	if (size == 0) return;
 
@@ -76,7 +76,7 @@ void LinkedList::pop_back()//удаление последнего
 	}
 	size--;
 }
-void LinkedList::pop_front()//удаление первого
+void LinkedList::pop_front()
 {
 	if (size == 0) return;
 
@@ -95,7 +95,7 @@ void LinkedList::pop_front()//удаление первого
 	size--;
 }
 
-int LinkedList::at(size_t index) const//получение элемента по индексу
+int LinkedList::at(size_t index) const
 {
 	if ((index >= size) || (index < 0)) {
 		throw out_of_range("Wrong index");
@@ -111,7 +111,7 @@ int LinkedList::at(size_t index) const//получение элемента по индексу
 	}
 }
 
-void LinkedList::insert(int n, size_t index)//добавление элемента по индексу
+void LinkedList::insert(int n, size_t index)
 {
 	if (size != 0)
 	{
@@ -151,7 +151,7 @@ void LinkedList::insert(int n, size_t index)//добавление элемента по индексу
 	else push_front(n);
 }
 
-void LinkedList::remove(size_t index) //удаление элемента по индексу
+void LinkedList::remove(size_t index) 
 {
 	if (size != 0) {
 		if ((index >= size) || (index < 0))
@@ -186,7 +186,7 @@ void LinkedList::remove(size_t index) //удаление элемента по индексу
 	}
 }
 
-void LinkedList::print_to_console() // вывод элементов списка в консоль через разделитель
+void LinkedList::print_to_console() 
 {
 	Node * current = head;
 	while (current != NULL) {
@@ -195,7 +195,7 @@ void LinkedList::print_to_console() // вывод элементов списка в консоль через ра
 
 	}
 }
-void LinkedList::clear() // удаление всех элементов списка
+void LinkedList::clear() 
 {
 
 	for (size_t i = 0; i < get_size() + 6
@@ -205,7 +205,7 @@ void LinkedList::clear() // удаление всех элементов списка
 
 	}
 }
-void LinkedList::set(size_t index, int elem) // замена элемента по индексу на передаваемый элемент
+void LinkedList::set(size_t index, int elem) 
 {
 	if (size != 0)
 	{
@@ -226,7 +226,7 @@ void LinkedList::set(size_t index, int elem) // замена элемента по индексу на пе
 	}
 
 }
-bool LinkedList::isEmpty() // проверка на пустоту списка
+bool LinkedList::isEmpty() 
 {
 	if (size == 0)
 		return true;
@@ -234,7 +234,7 @@ bool LinkedList::isEmpty() // проверка на пустоту списка
 		return false;
 }
 
-bool LinkedList::contains(LinkedList *lst) // проверка на содержание другого списка в списке
+bool LinkedList::contains(LinkedList *lst) 
 {
 	Node * current = head;
 	Node * current1 = lst->head;
@@ -262,7 +262,7 @@ bool LinkedList::contains(LinkedList *lst) // проверка на содержание другого спи
 
 }
 
-bool LinkedList::equals(LinkedList *lst) //равенство списков
+bool LinkedList::equals(LinkedList *lst) 
 {
 	Node * current = head;
 	Node * current1 = lst->head;
