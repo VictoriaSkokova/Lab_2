@@ -3,13 +3,13 @@
 #include "LinkedList.h"
 
 using namespace std;
-void LinkedList::reset_list()//для конструктора
+void LinkedList::reset_list()
 {
 	head = nullptr;
 	tail = nullptr;
 }
 
-LinkedList::LinkedList()//конструктор класса
+LinkedList::LinkedList()
 {
 	reset_list();
 	size = 0;
@@ -27,12 +27,12 @@ void LinkedList::add_first(int newElem)
 }
 
 
-size_t LinkedList::get_size() const//размер списка
+size_t LinkedList::get_size() const
 {
 	return size;
 }
 
-void LinkedList::push_back(int newElem)//в конец списка
+void LinkedList::push_back(int newElem)
 {
 	if (size == 0) {
 		add_first(newElem);
@@ -97,8 +97,8 @@ void LinkedList::pop_front()//удаление первого
 
 int LinkedList::at(size_t index) const//получение элемента по индексу
 {
-	if (index >= size) {
-		throw out_of_range("Index is greater than list size");
+	if ((index >= size) || (index < 0)) {
+		throw out_of_range("Wrong index");
 	}
 	else {
 		size_t counter = 0;
@@ -115,8 +115,8 @@ void LinkedList::insert(int n, size_t index)//добавление элемента по индексу
 {
 	if (size != 0)
 	{
-		if (index > size) {
-			throw out_of_range("Index is greater than list size");
+		if ((index >= size) || (index < 0)) {
+			throw out_of_range("Wrong size");
 		}
 		else {
 			if (index == 0)
@@ -154,9 +154,9 @@ void LinkedList::insert(int n, size_t index)//добавление элемента по индексу
 void LinkedList::remove(size_t index) //удаление элемента по индексу
 {
 	if (size != 0) {
-		if (index >= size)
+		if ((index >= size) || (index < 0))
 		{
-			throw out_of_range("Index is greater than list size");
+			throw out_of_range("Wrong index");
 		}
 		else
 		{
@@ -209,8 +209,8 @@ void LinkedList::set(size_t index, int elem) // замена элемента по индексу на пе
 {
 	if (size != 0)
 	{
-		if (index > size) {
-			throw out_of_range("Index is greater than list size");
+		if ((index >= size) || (index < 0)) {
+			throw out_of_range("Wrong index");
 		}
 		else {
 
