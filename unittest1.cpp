@@ -430,5 +430,118 @@ namespace UnitTest
 
 				Assert::IsFalse(list1.contains(&list2));
 			}
+
+			TEST_METHOD(error_insert_negative_index)
+			{
+				LinkedList list1;
+				char error;
+				try
+				{
+					list1.insert(-1, 1);
+				}
+				catch (const std::out_of_range& error)
+				{
+					Assert::AreEqual("Wrong index", error.what());
+				}
+			}
+
+			TEST_METHOD(error_insert_huge_index)
+			{
+				LinkedList list1;
+				char error;
+				try
+				{
+					list1.insert(5, 1);
+				}
+				catch (const std::out_of_range& error)
+				{
+					Assert::AreEqual("Wrong index", error.what());
+				}
+			}
+
+			TEST_METHOD(error_at_negative_index)
+			{
+				LinkedList list1;
+				char error;
+				try
+				{
+					list1.at(-1);
+				}
+				catch (const std::out_of_range& error)
+				{
+					Assert::AreEqual("Wrong index", error.what());
+				}
+			}
+
+			TEST_METHOD(error_at_huge_index)
+			{
+				LinkedList list1;
+				char error;
+				try
+				{
+					list1.at(5);
+				}
+				catch (const std::out_of_range& error)
+				{
+					Assert::AreEqual("Wrong index", error.what());
+				}
+			}
+
+
+			TEST_METHOD(error_remove_negative_index)
+			{
+				LinkedList list1;
+				char error;
+				try
+				{
+					list1.remove(-1);
+				}
+				catch (const std::out_of_range& error)
+				{
+					Assert::AreEqual("Wrong index", error.what());
+				}
+			}
+
+			TEST_METHOD(error_remove_huge_index)
+			{
+				LinkedList list1;
+				char error;
+				try
+				{
+					list1.remove(6);
+				}
+				catch (const std::out_of_range& error)
+				{
+					Assert::AreEqual("Wrong index", error.what());
+				}
+			}
+
+			TEST_METHOD(error_set_negative_index)
+			{
+				LinkedList list1;
+				char error;
+				try
+				{
+					list1.set(-1, 1);
+				}
+				catch (const std::out_of_range& error)
+				{
+					Assert::AreEqual("Wrong index", error.what());
+				}
+			}
+
+			TEST_METHOD(error_set_huge_index)
+			{
+				LinkedList list1;
+				char error;
+				try
+				{
+					list1.set(7, 1);
+				}
+				catch (const std::out_of_range& error)
+				{
+					Assert::AreEqual("Wrong index", error.what());
+				}
+			}
 	};
 }
