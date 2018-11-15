@@ -16,6 +16,16 @@ namespace UnitTest
 			Assert::IsTrue(list.isEmpty());
 		}
 		
+		TEST_METHOD(at)
+		{
+			LinkedList list;
+			list.push_back(1);
+			list.push_back(2);
+			list.push_back(3);
+			list.push_back(4);
+
+			Assert::IsTrue(list.at(0) == 1 && list.at(1) == 2 && list.at(2) == 3 && list.at(3) == 4);
+		}
 			TEST_METHOD(push_back)
 			{
 				LinkedList list;
@@ -222,16 +232,6 @@ namespace UnitTest
 				Assert::IsTrue(list1.equals(&list2));
 			}
 
-			TEST_METHOD(at)
-			{
-				LinkedList list;
-				list.push_back(1);
-				list.push_back(2);
-				list.push_back(3);
-				list.push_back(4);
-
-				Assert::IsTrue(list.at(0) == 1 && list.at(1) == 2 && list.at(2) == 3 && list.at(3) == 4);
-			}
 
 			TEST_METHOD(remove_middle)
 			{
@@ -372,7 +372,7 @@ namespace UnitTest
 
 				Assert::IsTrue(list1.contains(&list2));
 			}
-			TEST_METHOD(contains)
+			TEST_METHOD(contains_itself_1)
 			{
 				LinkedList list1;
 				list1.push_back(1);
