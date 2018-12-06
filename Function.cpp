@@ -18,6 +18,7 @@ LinkedList::LinkedList()
 
 LinkedList::~LinkedList()
 {
+	clear();
 }
 
 void LinkedList::add_first(int newElem)
@@ -247,7 +248,7 @@ bool LinkedList::contains(LinkedList *lst)
 		if (current->next == NULL)
 			return false;
 		current = current->next;
-	}  //доходим до элемента
+	}  //Г¤Г®ГµГ®Г¤ГЁГ¬ Г¤Г® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 
 	while (current1 != NULL)
 	{
